@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${title}"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <link href="/docs/4.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+<div class="container mt-5">
+    <h1>Добавить статью</h1>
+    <form action="/blog/add" method="post">
+        <div class="form-group">
+            <label><h5>Название статьи</h5></label>
+            <input type="text" name="title" placeholder="Название" class="form-control">
+            <small>Введите название статьи в форму</small>
+        </div>
+        <div class="form-group">
+            <label><h5>Анонс статьи</h5></label>
+            <input type="text" name="anons" placeholder="Анонс" class="form-control">
+            <small>Анонс статьи будет предварительно показываться на сайте</small>
+        </div>
+        <div>
+            <label><h5>Полный текст статьи</h5></label>
+            <textarea type="text" name="full_text" placeholder="Текст статьи" class="form-control"></textarea>
+            <small>Введите полный текст статьи в форму</small>
+        </div>
+        <button type="submit" class="btn btn-success">Добавить</button>
+    </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="/docs/4.5/assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="/docs/4.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd" crossorigin="anonymous"></script>
+<div th:insert="blocks/footer :: footer"></div>
+</body>
+</html>
